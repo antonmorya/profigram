@@ -1,0 +1,18 @@
+.bg-letter-us {
+    background-image: url('../img/mail.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include media('<'+$grid-breakpoint-sm) {
+        background-position: center top;
+    }
+}
+
+.letter-us {
+    input,
+    select {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+}

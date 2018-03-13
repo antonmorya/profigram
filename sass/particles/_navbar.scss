@@ -1,0 +1,28 @@
+.navbar {
+    @include interpolate(font-size, 320px, $grid-breakpoint-xl, 13px, 13px);
+    @include interpolate(padding-top, 320px, $grid-breakpoint-xl, 13px, 21px);
+    z-index: 20;
+    transition: box-shadow .2s;
+    @include media('<tablet') {
+        box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .95);
+    }
+    &.scrolled {
+        box-shadow: inset 0 0 0 200px rgba(255, 255, 255, .95);
+    }
+    .only-mobile-icons {
+        //font-size: 1.2rem
+    }
+    .nav-item {
+        &:hover .nav-link,
+        &.active .nav-link {
+            text-decoration: none;
+        }
+    }
+    button.btn {
+        font-size: 15px;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $txt-color-primary;
+}

@@ -1,0 +1,44 @@
+.list--bronze {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        padding-left: 1em;
+        text-indent: -.7em;
+        line-height: 1.8;
+    }
+    li::before {
+        content: "• ";
+        color: rgb(239, 161, 84);
+    }
+}
+
+.list--silver {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        padding-left: 1em;
+        text-indent: -.7em;
+        line-height: 1.8;
+    }
+    li::before {
+        content: "• ";
+        color: rgb(204, 204, 204);
+    }
+}
+
+.list--gold {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        padding-left: 1em;
+        text-indent: -.7em;
+        line-height: 1.8;
+    }
+    li::before {
+        content: "• ";
+        color: rgb(246, 192, 66);
+    }
+}

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Profigram</title>
+</head>
+
+<body class="" id="top">
+
+    <!-- Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Форма заказа</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body letter-us">
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="needs-validation" novalidate method="post" action="send_form_email.php">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="phone" class="form-control" id="phone" placeholder="Ваш телефон" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="url" class="form-control" id="socialnetworks" placeholder="Ваша страница в соц. сети">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService1">
+                                                <label class="custom-control-label" for="modalService1">service1</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService2">
+                                                <label class="custom-control-label" for="modalService2">service2</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService3">
+                                                <label class="custom-control-label" for="modalService3">service3</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService4">
+                                                <label class="custom-control-label" for="modalService4">service4</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService5">
+                                                <label class="custom-control-label" for="modalService5">service5</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService6">
+                                                <label class="custom-control-label" for="modalService6">service6</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService7">
+                                                <label class="custom-control-label" for="modalService7">service7</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService8">
+                                                <label class="custom-control-label" for="modalService8">service8</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService9">
+                                                <label class="custom-control-label" for="modalService9">service9</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modalService10">
+                                                <label class="custom-control-label" for="modalService10">ervice10</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right mt-4">
+                                    <button class="btn btn-danger btn-sm custom-rounded custom-colored px-4_5" type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary custom-rounded px-4_5 btn-sm" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-danger custom-colored custom-rounded px-4_5 btn-sm">Заказать</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main-Navigation -->
+    <nav class="navbar fixed-top navbar-expand-md navbar-light text-lowercase">
+        <div class="container">
+            <a class="navbar-brand order-1 " href="javascript:void(0)" data-scrollto="#top">
+                <img src="img/logo.png" height="45" alt="Logo">
+                <!-- width="100" -->
+                <label class="badge badge-danger d-inline-block d-sm-none">XS</label>
+                <label class="badge badge-warning d-none d-sm-inline-block d-md-none">SM</label>
+                <label class="badge badge-success d-none d-md-inline-block d-lg-none">MD</label>
+                <label class="badge badge-info d-none d-lg-inline-block">LG</label>
+            </a>
+
+            <button class="navbar-toggler order-3 " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="order-1 d-flex d-md-none only-mobile-icons">
+                <!-- Mobile Icons can be here -->
+            </div>
+
+            <div class="collapse navbar-collapse order-4 justify-content-md-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#service">
+                            Услуги
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#benefits">
+                            Преимущества
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#service-packages">
+                            Пакеты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#insta-business">
+                            Бизнес
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#clients">
+                            Клиенты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#letter-us">
+                            Контакты
+                        </a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <button class="btn custom-colored btn-danger custom-rounded btn-sm px-4_5" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn custom-colored btn-danger btn-sm custom-rounded float-right order-5 d-none d-md-block px-4_5"
+                data-toggle="modal" data-target="#orderModal">Заказать</button>
+        </div>
+    </nav>
+
+    <div class="hero hero-bg d-flex flex-row" id="hero">
+        <div class="container align-self-center">
+            <div class="row">
+                <div class="col-md-7">
+                    <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                        <!-- <ol class="carousel-indicators">
+                            <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#hero-carousel" data-slide-to="1"></li>
+                            <li data-target="#hero-carousel" data-slide-to="2"></li>
+                            <li data-target="#hero-carousel" data-slide-to="3"></li>
+                        </ol> -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container p-md-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="">
+                                                <label class="badge badge-danger text-uppercase">акция</label>
+                                                <h2>Скидка -20% на все услуги по промокоду
+                                                    <span class="text-danger bg-glass">spring20</span>
+                                                </h2>
+                                                <p class="text-muted">Предложение действует до 31.12.18</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="container p-md-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="">
+                                                <label class="badge badge-info text-uppercase">Предложение</label>
+                                                <h2>Текст предложения</h2>
+                                                <p class="text-muted">Условия</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="container p-md-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="">
+                                                <label class="badge badge-warning text-uppercase">Промо</label>
+                                                <h2>Текст предложения</h2>
+                                                <p class="text-muted">Условия</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="container p-md-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="">
+                                                <label class="badge badge-success text-uppercase">Подарок</label>
+                                                <h2>Текст предложения</h2>
+                                                <p class="text-muted">Условия</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-3">
+                            <a class="btn btn__arrowed--left bg-f8 mr-5" href="#hero-carousel" role="button" data-slide="prev">
+                                <span class="d-none d-md-inline">&larr;</span>
+                                <span class="d-inline d-md-none oi oi-caret-left"></span>
+                            </a>
+                            <a class="btn bg-f8 btn__arrowed--right bg-f8" href="#hero-carousel" role="button" data-slide="next">
+                                <span class="d-none d-md-inline">&rarr;</span>
+                                <span class="d-inline d-md-none oi oi-caret-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container service mb-4 mb-md-0" id="service">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-header m-0">Услуги</h2>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-md-2">
+                <h1 class="service__hero text-md-right">01</h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="service__header">Продвижение страниц</h3>
+                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
+                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
+                <label class="d-flex price-label mb-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$1000</span>
+                </label>
+                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <!-- <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div> -->
+
+    <section class="container service mb-4 mb-md-0">
+        <div class="row">
+            <div class="col-md-auto">
+                <h1 class="service__hero">02</h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="service__header">Подборка контента</h3>
+                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
+                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
+                <label class="d-flex price-label mb-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$200</span>
+                </label>
+                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <!-- <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div> -->
+
+    <section class="container service mb-4 mb-md-0">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <h1 class="service__hero text-md-right">03</h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="service__header">Администрирование страниц</h3>
+                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
+                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
+                <label class="d-flex price-label mb-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$600</span>
+                </label>
+                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container service mb-4 mb-md-0">
+        <div class="row">
+            <div class="col-md-auto">
+                <h1 class="service__hero">04</h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="service__header">Массфоловинг</h3>
+                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
+                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
+                <label class="d-flex price-label mb-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$450</span>
+                </label>
+                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container service mb-4 mb-md-0">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <h1 class="service__hero text-md-right">05</h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="service__header">Рассылка сообщений</h3>
+                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
+                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
+                <label class="d-flex price-label mb-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$200</span>
+                </label>
+                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container service mb-4 mb-md-0">
+        <div class="row">
+            <div class="col-md-auto">
+                <h1 class="service__hero">06</h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="service__header">Создание промо-сайтов</h3>
+                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
+                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
+                <label class="d-flex price-label mb-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$2000</span>
+                </label>
+                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container benefits" id="benefits">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-header mb-5">Преимущества</h1>
+            </div>
+            <div class="benefits__item col-sm-6 col-lg-4 d-flex flex-row mb-md-5 mb-4">
+                <img src="img/benefits-icons/online-shop.png" alt="" class="benefits__item-icon">
+                <div class="pl-3 pr-md-5">
+                    <h3 class="benefits__item-header mt-md-4">Фильтрация магазинов и торговых площадок</h3>
+                    <p class="benefits__item-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt officia placeat?</p>
+                </div>
+            </div>
+            <div class="benefits__item col-sm-6 col-lg-4 d-flex flex-row mb-md-5 mb-4">
+                <img src="img/benefits-icons/tactics.png" alt="" class="benefits__item-icon">
+                <div class="pl-3 pr-md-5">
+                    <h3 class="benefits__item-header mt-md-4">Создание плана раскрутки под каждого клиента</h3>
+                    <p class="benefits__item-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt officia placeat?</p>
+                </div>
+            </div>
+            <div class="benefits__item col-sm-6 col-lg-4 d-flex flex-row mb-md-5 mb-4">
+                <img src="img/benefits-icons/edits.png" alt="" class="benefits__item-icon">
+                <div class="pl-3 pr-md-5">
+                    <h3 class="benefits__item-header mt-md-4">Возможность доработки кампании под Ваши нужды</h3>
+                    <p class="benefits__item-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt officia placeat?</p>
+                </div>
+            </div>
+            <div class="benefits__item col-sm-6 col-lg-4 d-flex flex-row mb-md-5 mb-4">
+                <img src="img/benefits-icons/social-media.png" alt="" class="benefits__item-icon">
+                <div class="pl-3 pr-md-5">
+                    <h3 class="benefits__item-header mt-md-4">Всегда в тренде</h3>
+                    <p class="benefits__item-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt officia placeat?</p>
+                </div>
+            </div>
+            <div class="benefits__item col-sm-6 col-lg-4 d-flex flex-row mb-md-5 mb-4">
+                <img src="img/benefits-icons/support.png" alt="" class="benefits__item-icon">
+                <div class="pl-3 pr-md-5">
+                    <h3 class="benefits__item-header mt-md-4">Бесплатная консультация</h3>
+                    <p class="benefits__item-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt officia placeat?</p>
+                </div>
+            </div>
+            <div class="benefits__item col-sm-6 col-lg-4 d-flex flex-row mb-md-5 mb-4">
+                <img src="img/benefits-icons/free-delivery.png" alt="" class="benefits__item-icon">
+                <div class="pl-3 pr-md-5">
+                    <h3 class="benefits__item-header mt-md-4">Первые 3 дня - бесплатны</h3>
+                    <p class="benefits__item-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt officia placeat?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container service-packages" id="service-packages">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-header mt-0 mb-5">Пакеты услуг</h1>
+            </div>
+            <div class="col-md-4 px-md-1 px-lg-5 mb-5 mb-md-0 service-packages__item">
+                <button class="btn service-packages__item-button btn btn-block custom-colored--bronze">Bronze</button>
+                <ul class="mt-4 px-3 list--bronze">
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+                <label class="d-flex price-label mb-4 justify-content-center mb-4 mt-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$450</span>
+                </label>
+                <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+            <div class="col-md-4 px-md-1 px-lg-5 mb-5 mb-md-0 service-packages__item">
+                <button class="btn service-packages__item-button btn btn-block custom-colored--silver">Silver</button>
+                <ul class="mt-4 px-3 list--silver">
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+                <label class="d-flex price-label mb-4 justify-content-center mb-4 mt-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$450</span>
+                </label>
+                <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+            <div class="col-md-4 px-md-1 px-lg-5 mb-md-0 service-packages__item">
+                <button class="btn service-packages__item-button btn btn-block custom-colored--gold">Gold</button>
+                <ul class="mt-4 px-3 list--gold">
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+                <label class="d-flex price-label mb-4 justify-content-center mb-4 mt-4">
+                    <span class="price-label__text">Цена</span>
+                    <span class="price-label__defis">&mdash;</span>
+                    <span class="price-label__price">$450</span>
+                </label>
+                <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container insta-business" id="insta-business">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-5 d-none d-sm-block bg-insta-business"></div>
+            <div class="col-sm-7 pl-md-5">
+                <header class="">
+                    <h2 class="insta-business__header">Бизнес в инстаграм</h2>
+                </header>
+                <main>
+                    <p class="text-muted insta-business__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed obcaecati iusto nulla! In officia enim ipsum
+                        cum, molestiae officiis totam doloremque quidem quasi voluptates quas nemo, architecto facilis minus
+                        ipsa id blanditiis iste. Delectus molestiae corporis suscipit? Quidem, enim quae.</p>
+                </main>
+                <footer>
+                    <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5">Консультация</button>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container insta-block" id="insta-block">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-header mt-0 mb-5">Примеры работ</h1>
+            </div>
+            <!-- carousel -->
+            <!-- <div class="col-12 grid">
+                <div class="row">
+                    <div class="col-3 py-1 grid_big px-1">
+                        <img src="img/insta-block/img_1.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-3 py-1 grid_big pl-1 pr-0">
+                        <img src="img/insta-block/img_2.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-6 px-1 d-flex flex-row px-1">
+                        <div class="col px-1 py-1 grid_small">
+                            <div>
+                                <img src="img/insta-block/img_3.png" alt="" class="img-fluid">
+                            </div>
+                            <div>
+                                <img src="img/insta-block/img_4.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col px-1 py-1 grid_small">
+                            <div>
+                                <img src="img/insta-block/img_5.png" alt="" class="img-fluid">
+                            </div>
+                            <div>
+                                <img src="img/insta-block/img_6.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col px-1 py-1 grid_small">
+                            <div>
+                                <img src="img/insta-block/img_4.png" alt="" class="img-fluid">
+                            </div>
+                            <div>
+                                <img src="img/insta-block/img_3.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-12">
+                <div id="examples-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <!-- <ol class="carousel-indicators">
+                                                <li data-target="#examples-carousel" data-slide-to="0" class="active"></li>
+                                                <li data-target="#examples-carousel" data-slide-to="1"></li>
+                                                <li data-target="#examples-carousel" data-slide-to="2"></li>
+                                                <li data-target="#examples-carousel" data-slide-to="3"></li>
+                                            </ol> -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-12 p-0 carousel-item__image-wrapper">
+                                        <img src="https://loremflickr.com/1140/300" alt="Example" class="img-fluid">
+                                        <div class="carousel-item__image-description text-center d-flex align-items-start align-items-md-center justify-content-md-center">
+                                            <div class="">
+                                                <h3>Ещё один успешный проект</h3>
+                                                <small class="text-muted d-none d-md-inline-block">Но есть нюансы</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-12 p-0 carousel-item__image-wrapper">
+                                        <img src="https://loremflickr.com/1140/300" alt="Example" class="img-fluid">
+                                        <div class="carousel-item__image-description text-center d-flex align-items-start align-items-md-center justify-content-md-center">
+                                            <div class="">
+                                                <h3>Ещё один успешный проект</h3>
+                                                <small class="text-muted d-none d-md-inline-block">Но есть нюансы</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-12 p-0 carousel-item__image-wrapper">
+                                        <img src="https://loremflickr.com/1140/300" alt="Example" class="img-fluid">
+                                        <div class="carousel-item__image-description text-center d-flex align-items-start align-items-md-center justify-content-md-center">
+                                            <div class="">
+                                                <h3>Ещё один успешный проект</h3>
+                                                <small class="text-muted d-none d-md-inline-block">Но есть нюансы</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-12 p-0 carousel-item__image-wrapper">
+                                        <img src="https://loremflickr.com/1140/300" alt="Example" class="img-fluid">
+                                        <div class="carousel-item__image-description text-center d-flex align-items-start align-items-md-center justify-content-md-center">
+                                            <div class="">
+                                                <h3>Ещё один успешный проект</h3>
+                                                <small class="text-muted d-none d-md-inline-block">Но есть нюансы</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="py-3 text-center">
+                        <a class="btn btn__arrowed--left bg-f8 mr-5" href="#examples-carousel" role="button" data-slide="prev">
+                            <span class="d-none d-md-inline">&larr;</span>
+                            <span class="d-inline d-md-none oi oi-caret-left"></span>
+                        </a>
+                        <a class="btn bg-f8 btn__arrowed--right bg-f8" href="#examples-carousel" role="button" data-slide="next">
+                            <span class="d-none d-md-inline">&rarr;</span>
+                            <span class="d-inline d-md-none oi oi-caret-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container clients" id="clients">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="section-header mt-0 mb-5">Отзывы</h1>
+            </div>
+            <div class="col-12">
+                <div id="clients-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <!-- <ol class="carousel-indicators">
+                                        <li data-target="#clients-carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#clients-carousel" data-slide-to="1"></li>
+                                        <li data-target="#clients-carousel" data-slide-to="2"></li>
+                                        <li data-target="#clients-carousel" data-slide-to="3"></li>
+                                    </ol> -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_1.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Анастасия</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_2.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Виктор</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_1.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Анастасия</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_2.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Виктор</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_1.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Анастасия</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_2.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Виктор</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="container p-md-0">
+                                <div class="row">
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_1.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Анастасия</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center clients__item">
+                                        <img src="img/avatars/avatar_2.png" alt="" class="clients__item-avatar">
+                                        <h3 class="clients__item-name mt-4 mb-4">Виктор</h3>
+                                        <div class="d-flex flex-row">
+                                            <img src="img/quotes.png" alt="" class="clients__item-quotes">
+                                            <p class="clients__item-feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, molestiae? Voluptatibus
+                                                corporis quos eaque iusto commodi facere ducimus. Sunt, in.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn__arrowed--left bg-f8 mr-5" href="#clients-carousel" role="button" data-slide="prev">
+                            <span class="d-none d-md-inline">&larr;</span>
+                            <span class="d-inline d-md-none oi oi-caret-left"></span>
+                        </a>
+                        <a class="btn btn__arrowed--right bg-f8" href="#clients-carousel" role="button" data-slide="next">
+                            <span class="d-none d-md-inline">&rarr;</span>
+                            <span class="d-inline d-md-none oi oi-caret-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <section class="container letter-us" id="letter-us">
+        <div class="row">
+            <div class="col-md-7 col-lg-5">
+                <h1 class="section-header mt-0 mb-5">Напишите нам чтобы узнать больше</h1>
+            </div>
+            <div class="col-12"></div>
+            <div class="col-2 col-sm-4 col-md-7 bg-letter-us"></div>
+            <div class="col-10 col-sm-8 col-md-5">
+                <form class="needs-validation" novalidate method="post" action="send_form_email.php">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Ваш телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="url" class="form-control" id="socialnetworks" placeholder="Ваша страница в соц. сети">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service1">
+                                    <label class="custom-control-label" for="service1">service1</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service2">
+                                    <label class="custom-control-label" for="service2">service2</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service3">
+                                    <label class="custom-control-label" for="service3">service3</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service4">
+                                    <label class="custom-control-label" for="service4">service4</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service5">
+                                    <label class="custom-control-label" for="service5">service5</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service6">
+                                    <label class="custom-control-label" for="service6">service6</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service7">
+                                    <label class="custom-control-label" for="service7">service7</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service8">
+                                    <label class="custom-control-label" for="service8">service8</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service9">
+                                    <label class="custom-control-label" for="service9">service9</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="service10">
+                                    <label class="custom-control-label" for="service10">ervice10</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-right mt-4">
+                        <button class="btn btn-danger btn-sm custom-rounded custom-colored px-4_5" type="submit">Заказать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+
+    <footer class="contacts" id="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="section-header mt-4 mb-5">Контакты</h1>
+                </div>
+                <div class="col-12">
+                    <label class="contacts__label d-block" class="d-block">
+                        <span class="contacts__label__text">EMAIL: </span>
+                        <a href="mailto:hello@profigram.com">hello@profigram.com</a>
+                    </label>
+                    <label class="contacts__label d-block" class="d-block">
+                        <span class="contacts__label__text">Phone: </span>
+                        <a href="callto:380670123456">38(067)-012-34-56</a>
+                    </label>
+                </div>
+                <div class="divider col-12 d-none d-md-block pb-5 pt-4"></div>
+                <div class="col-12 d-flex flex-row align-items-center flex-column flex-md-row">
+                    <img src="img/logo.png" width="100" height="30" alt="Logo" class="d-block">
+                    <small class="d-block w-100 text-center">All rights reserved. 2018</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 70) {
+                $('nav.navbar').addClass('scrolled');
+            } else {
+                $('nav.navbar').removeClass('scrolled');
+            }
+        });
+
+        $(".navbar a").click(function () {
+            $('html, body').animate({
+                scrollTop: $($(this).data('scrollto')).offset().top - 70
+            }, 500);
+        });
+
+        (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+    </script>
+</body>
+
+
+</html>
