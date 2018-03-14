@@ -73,6 +73,7 @@ button.btn {
     &.custom-colored {
         background-image: linear-gradient( 90deg, rgb(230, 13, 68) 0%, rgb(190, 55, 93) 100%);
         color: white;
+        box-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
         &:not(:disabled):not(.disabled):active {
             color: #fff;
             background-color: #bd2130;
@@ -219,14 +220,24 @@ a:focus {
     text-transform: uppercase;
     /* letter-spacing: 8.2px; */
     @include interpolate(letter-spacing, 320px, $grid-breakpoint-xl, 0, 7.8px);
+    text-shadow: .5px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .price-label {
+    text-shadow: .5px 1px 1px rgba(0, 0, 0, 0.3);
+    span {
+        @include media('>tablet') {
+            display: block;
+        }
+    }
     .price-label__text {
         font-weight: 900;
         font-size: 0.9rem;
         text-transform: lowercase;
         line-height: 22px;
+        @include media('<tablet') {
+            font-size: 22px;
+        }
     }
     .price-label__defis {
         padding-left: 12px;
@@ -234,6 +245,9 @@ a:focus {
         font-weight: 700;
         color: $txt-color-muted;
         line-height: 22px;
+        @include media('<tablet') {
+            font-size: 22px;
+        }
     }
     .price-label__price {
         font: semi-condensed normal 900 22px "Helvetica Neue", sans-serif;

@@ -2,6 +2,7 @@
     .service__hero {
         font: ultra-condensed small-caps 900 5.5rem "Helvetica Neue", sans-serif;
         line-height: 1;
+        text-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
         @include media('<tablet') {
             margin-top: 1rem;
             margin-bottom: 0;
@@ -13,6 +14,7 @@
         font-size: 2rem;
         margin-top: 3rem;
         margin-bottom: 1.5rem;
+        text-shadow: .5px 1px 1px rgba(0, 0, 0, 0.3);
         @include media('<tablet') {
             margin-top: 0;
         }
