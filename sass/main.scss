@@ -11,12 +11,12 @@
 @import 'particles/_clients';
 @import 'particles/_letter-us';
 @import 'particles/_contacts';
-/* .here {
+.here {
     border: 1px dashed red;
     &1 {
         border: 1px dashed blue;
     }
-} */
+}
 
 .bg-f8 {
     background-color: #f8f8f8;
@@ -191,6 +191,9 @@ a:focus {
         background-size: cover;
         height: auto;
         padding: 15px 0;
+        @include media('<tablet') {
+            min-height: 260px;
+        }
     }
     &control-next,
     &control-prev {
@@ -223,19 +226,19 @@ a:focus {
         font-weight: 900;
         font-size: 0.9rem;
         text-transform: lowercase;
-        line-height: 1.3rem;
+        line-height: 22px;
     }
     .price-label__defis {
         padding-left: 12px;
         padding-right: 12px;
         font-weight: 700;
         color: $txt-color-muted;
-        line-height: 1.3rem;
+        line-height: 22px;
     }
     .price-label__price {
-        font: semi-condensed normal 900 1.3rem "Helvetica Neue", sans-serif;
+        font: semi-condensed normal 900 22px "Helvetica Neue", sans-serif;
         color: $txt-color-primary-red;
-        line-height: 1.3rem;
+        line-height: 22px;
     }
 }
 
@@ -346,4 +349,12 @@ input,
 .custom-control-input.is-valid~.custom-control-label,
 .was-validated .custom-control-input:valid~.custom-control-la {
     color: $txt-color-muted
+}
+
+.social-icon img {
+    height: 25px;
+}
+
+a:hover {
+    text-decoration: none;
 }

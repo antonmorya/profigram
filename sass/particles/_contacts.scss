@@ -6,4 +6,21 @@
         text-transform: uppercase;
         color: $txt-color-highlight-second;
     }
+    .section-header {
+        line-height: 1;
+    }
+    a {
+        color: $txt-color-primary;
+        &:hover {
+            color: $txt-color-primary-red;
+        }
+    }
+    .logo {
+        height: 2rem;
+    }
+    .section-header {
+        @include interpolate(font-size, 320px, $grid-breakpoint-xl, 28px, 36px);
+        line-height: 1.2;
+        font-weight: 300;
+    }
 }

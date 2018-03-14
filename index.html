@@ -39,6 +39,9 @@
                                     <input type="url" class="form-control" id="socialnetworks" placeholder="Ваша страница в соц. сети">
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control" id="promocode" placeholder="Промокод">
+                                </div>
+                                <div class="form-group">
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="custom-control custom-checkbox">
@@ -106,8 +109,7 @@
     <nav class="navbar fixed-top navbar-expand-md navbar-light text-lowercase">
         <div class="container">
             <a class="navbar-brand order-1 " href="javascript:void(0)" data-scrollto="#top">
-                <img src="img/logo.png" height="45" alt="Logo">
-                <!-- width="100" -->
+                <img src="img/logo.png" alt="Logo" class="logo">
                 <!-- <label class="badge badge-danger d-inline-block d-sm-none">XS</label>
                 <label class="badge badge-warning d-none d-sm-inline-block d-md-none">SM</label>
                 <label class="badge badge-success d-none d-md-inline-block d-lg-none">MD</label>
@@ -124,7 +126,7 @@
             </div>
 
             <div class="collapse navbar-collapse order-4 justify-content-md-center" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mb-4 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link mx-1" href="javascript:void(0)" data-scrollto="#service">
                             Услуги
@@ -155,14 +157,26 @@
                             Контакты
                         </a>
                     </li>
-                    <li class="nav-item d-md-none">
+                    <li class="nav-item d-md-none text-center">
                         <button class="btn custom-colored btn-danger custom-rounded btn-sm px-4_5" data-toggle="modal" data-target="#orderModal">Заказать</button>
                     </li>
                 </ul>
             </div>
 
-            <button class="btn custom-colored btn-danger btn-sm custom-rounded float-right order-5 d-none d-md-block px-4_5"
-                data-toggle="modal" data-target="#orderModal">Заказать</button>
+            <span class="order-2 order-md-5 mr-3 d-none d-lg-block">
+                <a href="instagram://user?username=[1]" class="social-icon mr-1">
+                    <img src="img/social-icons/instagram.svg" alt="Instagram logo">
+                </a>
+                <a href="tg://resolve?domain=имя" class="social-icon mr-1">
+                    <img src="img/social-icons/telegram.svg" alt="Telegram logo">
+                </a>
+                <a href="viber://add?number=%2B380670123456" class="social-icon">
+                    <img src="img/social-icons/viber.svg" alt="Viber logo">
+                </a>
+            </span>
+
+            <button class="btn custom-colored btn-danger btn-sm custom-rounded float-right order-6 d-none d-md-block px-4_5" data-toggle="modal"
+                data-target="#orderModal">Заказать</button>
         </div>
     </nav>
 
@@ -170,7 +184,7 @@
         <div class="container align-self-center">
             <div class="row">
                 <div class="col-md-7">
-                    <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
                         <!-- <ol class="carousel-indicators">
                             <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
                             <li data-target="#hero-carousel" data-slide-to="1"></li>
@@ -184,10 +198,10 @@
                                         <div class="col-12">
                                             <div class="">
                                                 <label class="badge badge-danger text-uppercase">акция</label>
-                                                <h2>Скидка -20% на все услуги по промокоду
-                                                    <span class="text-danger bg-glass">spring20</span>
+                                                <h2>Скидка 15% на все услуги по промокоду
+                                                    <span class="text-danger bg-glass">profigram</span>
                                                 </h2>
-                                                <p class="text-muted">Предложение действует до 31.12.18</p>
+                                                <p class="text-muted">Предложение действует до 31.08.2018</p>
                                             </div>
                                         </div>
                                     </div>
@@ -200,8 +214,10 @@
                                         <div class="col-12">
                                             <div class="">
                                                 <label class="badge badge-info text-uppercase">Предложение</label>
-                                                <h2>Текст предложения</h2>
-                                                <p class="text-muted">Условия</p>
+                                                <h2>Пакет SILVER по цене BRONZE условия
+                                                    <small class="text-muted">*</small>
+                                                </h2>
+                                                <p class="text-muted">*от 2-ух месяцев сотрудничества</p>
                                             </div>
                                         </div>
                                     </div>
@@ -214,8 +230,10 @@
                                         <div class="col-12">
                                             <div class="">
                                                 <label class="badge badge-warning text-uppercase">Промо</label>
-                                                <h2>Текст предложения</h2>
-                                                <p class="text-muted">Условия</p>
+                                                <h2>Первые 3 дня - бесплатно
+                                                    <small class="text-muted">*</small>
+                                                </h2>
+                                                <p class="text-muted">*Консультация и рекомендации в режиме online.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -228,8 +246,10 @@
                                         <div class="col-12">
                                             <div class="">
                                                 <label class="badge badge-success text-uppercase">Подарок</label>
-                                                <h2>Текст предложения</h2>
-                                                <p class="text-muted">Условия</p>
+                                                <h2>Фильтрация торговых площадок и рассылка сообщений - бесплатны!
+                                                    <small class="text-muted">*</small>
+                                                </h2>
+                                                <p class="text-muted">*Попробуйте пакет Silver/Gold</p>
                                             </div>
                                         </div>
                                     </div>
@@ -252,139 +272,177 @@
         </div>
     </div>
 
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+    <section id="service">
+        <!-- divider -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-header m-0">Услуги</h2>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-md-2">
+                    <h1 class="service__hero text-md-right">01</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Продвижение страниц</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">от 599 грн</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
+            </div>
+        </div>
 
-    <section class="container service mb-4 mb-md-0" id="service">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section-header m-0">Услуги</h2>
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-md-auto">
+                    <h1 class="service__hero">02</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Подборка контента</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">от 1999 грн</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
             </div>
-            <div class="col-4"></div>
-            <div class="col-md-2">
-                <h1 class="service__hero text-md-right">01</h1>
+        </div>
+
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <h1 class="service__hero text-md-right">03</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Администрирование страниц</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">от 649 грн</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3 class="service__header">Продвижение страниц</h3>
-                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
-                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
-                <label class="d-flex price-label mb-4">
-                    <span class="price-label__text">Цена</span>
-                    <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$1000</span>
-                </label>
-                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+        </div>
+
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-md-auto">
+                    <h1 class="service__hero">04</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Массфоловинг</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">от 599 грн</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <h1 class="service__hero text-md-right">05</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Рассылка сообщений</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">от 199 грн</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-md-auto">
+                    <h1 class="service__hero">06</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Консультации и рекомендации</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">бесплатно</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service mb-4 mb-md-0">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <h1 class="service__hero text-md-right">07</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="service__header">Оформление медиа-контента</h3>
+                    <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore
+                        non beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam,
+                        excepturi?
+                    </p>
+                    <label class="d-flex price-label mb-4">
+                        <span class="price-label__text">Цена</span>
+                        <span class="price-label__defis">&mdash;</span>
+                        <span class="price-label__price">от 999 грн</span>
+                    </label>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- divider -->
-    <!-- <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div> -->
-
-    <section class="container service mb-4 mb-md-0">
-        <div class="row">
-            <div class="col-md-auto">
-                <h1 class="service__hero">02</h1>
-            </div>
-            <div class="col-md-6">
-                <h3 class="service__header">Подборка контента</h3>
-                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
-                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
-                <label class="d-flex price-label mb-4">
-                    <span class="price-label__text">Цена</span>
-                    <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$200</span>
-                </label>
-                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- divider -->
-    <!-- <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div> -->
-
-    <section class="container service mb-4 mb-md-0">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
-                <h1 class="service__hero text-md-right">03</h1>
-            </div>
-            <div class="col-md-6">
-                <h3 class="service__header">Администрирование страниц</h3>
-                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
-                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
-                <label class="d-flex price-label mb-4">
-                    <span class="price-label__text">Цена</span>
-                    <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$600</span>
-                </label>
-                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="container service mb-4 mb-md-0">
-        <div class="row">
-            <div class="col-md-auto">
-                <h1 class="service__hero">04</h1>
-            </div>
-            <div class="col-md-6">
-                <h3 class="service__header">Массфоловинг</h3>
-                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
-                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
-                <label class="d-flex price-label mb-4">
-                    <span class="price-label__text">Цена</span>
-                    <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$450</span>
-                </label>
-                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="container service mb-4 mb-md-0">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
-                <h1 class="service__hero text-md-right">05</h1>
-            </div>
-            <div class="col-md-6">
-                <h3 class="service__header">Рассылка сообщений</h3>
-                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
-                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
-                <label class="d-flex price-label mb-4">
-                    <span class="price-label__text">Цена</span>
-                    <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$200</span>
-                </label>
-                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="container service mb-4 mb-md-0">
-        <div class="row">
-            <div class="col-md-auto">
-                <h1 class="service__hero">06</h1>
-            </div>
-            <div class="col-md-6">
-                <h3 class="service__header">Создание промо-сайтов</h3>
-                <p class="text-muted service__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet dolores illum voluptatem neque dolore non
-                    beatae omnis, dolor consequuntur quas odit voluptatibus, cupiditate qui odio fuga sed ex. Veniam, excepturi?</p>
-                <label class="d-flex price-label mb-4">
-                    <span class="price-label__text">Цена</span>
-                    <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$2000</span>
-                </label>
-                <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
 
     <section class="container benefits" id="benefits">
+        <!-- divider -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <h1 class="section-header mb-5">Преимущества</h1>
@@ -434,10 +492,14 @@
         </div>
     </section>
 
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
 
     <section class="container service-packages" id="service-packages">
+        <!-- divider -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <h1 class="section-header mt-0 mb-5">Пакеты услуг</h1>
@@ -445,66 +507,66 @@
             <div class="col-md-4 px-md-1 px-lg-5 mb-5 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--bronze">Bronze</button>
                 <ul class="mt-4 px-3 list--bronze">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Привлечение актуальной аудитории для Вашего аккаунта</li>
+                    <li>Массфоловинг</li>
+                    <li>Консультация</li>
                 </ul>
                 <label class="d-flex price-label mb-4 justify-content-center mb-4 mt-4">
                     <span class="price-label__text">Цена</span>
                     <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$450</span>
+                    <span class="price-label__price">от 699 грн</span>
                 </label>
                 <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
             </div>
             <div class="col-md-4 px-md-1 px-lg-5 mb-5 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--silver">Silver</button>
                 <ul class="mt-4 px-3 list--silver">
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Привлечение актуальной аудитории для Вашего аккаунта</li>
+                    <li>Массфоловинг</li>
+                    <li>Фильтрация магазинов и торговых площадок</li>
+                    <li>Ррассылка сообщений</li>
+                    <li>Ррекомендации по ведению страницы</li>
                 </ul>
                 <label class="d-flex price-label mb-4 justify-content-center mb-4 mt-4">
                     <span class="price-label__text">Цена</span>
                     <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$450</span>
+                    <span class="price-label__price">от 899 грн</span>
                 </label>
                 <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
             </div>
             <div class="col-md-4 px-md-1 px-lg-5 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--gold">Gold</button>
                 <ul class="mt-4 px-3 list--gold">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Привлечение актуальной аудитории для Вашего аккаунта</li>
+                    <li>Массфоловинг</li>
+                    <li>Фильтрация магазинов и торговых площадок</li>
+                    <li>Ррассылка сообщений</li>
+                    <li>Администрирование страницы</li>
+                    <li>Создание качественного контента</li>
                 </ul>
                 <label class="d-flex price-label mb-4 justify-content-center mb-4 mt-4">
                     <span class="price-label__text">Цена</span>
                     <span class="price-label__defis">&mdash;</span>
-                    <span class="price-label__price">$450</span>
+                    <span class="price-label__price">от 2999 грн</span>
                 </label>
                 <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
             </div>
         </div>
     </section>
 
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
 
     <section class="container insta-business" id="insta-business">
+        <!-- divider -->
         <div class="row">
-
+            <div class="col-12">
+                <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+            </div>
         </div>
         <div class="row">
             <div class="col-5 d-none d-sm-block bg-insta-business"></div>
             <div class="col-sm-7 pl-md-5">
                 <header class="">
-                    <h2 class="insta-business__header">Бизнес в инстаграм</h2>
+                    <h2 class="insta-business__header mt-3 mt-md-0">Бизнес в инстаграм</h2>
                 </header>
                 <main>
                     <p class="text-muted insta-business__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed obcaecati iusto nulla! In officia enim ipsum
@@ -512,16 +574,19 @@
                         ipsa id blanditiis iste. Delectus molestiae corporis suscipit? Quidem, enim quae.</p>
                 </main>
                 <footer>
-                    <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5">Консультация</button>
+                    <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5" data-toggle="modal" data-target="#orderModal">Консультация</button>
                 </footer>
             </div>
         </div>
     </section>
 
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
-
     <section class="container insta-block" id="insta-block">
+        <!-- divider -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <h1 class="section-header mt-0 mb-5">Примеры работ</h1>
@@ -564,7 +629,7 @@
                 </div>
             </div> -->
             <div class="col-12">
-                <div id="examples-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <div id="examples-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
                     <!-- <ol class="carousel-indicators">
                                                 <li data-target="#examples-carousel" data-slide-to="0" class="active"></li>
                                                 <li data-target="#examples-carousel" data-slide-to="1"></li>
@@ -652,16 +717,19 @@
         </div>
     </section>
 
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
-
     <section class="container clients" id="clients">
+        <!-- divider -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <h1 class="section-header mt-0 mb-5">Отзывы</h1>
             </div>
             <div class="col-12">
-                <div id="clients-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <div id="clients-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
                     <!-- <ol class="carousel-indicators">
                                         <li data-target="#clients-carousel" data-slide-to="0" class="active"></li>
                                         <li data-target="#clients-carousel" data-slide-to="1"></li>
@@ -785,10 +853,13 @@
         </div>
     </section>
 
-    <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
-
     <section class="container letter-us" id="letter-us">
+        <!-- divider -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-7 col-lg-5">
                 <h1 class="section-header mt-0 mb-5">Напишите нам чтобы узнать больше</h1>
@@ -805,6 +876,9 @@
                     </div>
                     <div class="form-group">
                         <input type="url" class="form-control" id="socialnetworks" placeholder="Ваша страница в соц. сети">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="promocode" placeholder="Промокод">
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -863,27 +937,40 @@
     </section>
 
     <!-- divider -->
-    <div class="mb-5 mt-md-5 pt-md-3 d-block divider"></div>
+    <div class="mb-5 mt-3 mt-md-5 pt-md-3 d-block divider"></div>
 
     <footer class="contacts" id="contacts">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="section-header mt-4 mb-5">Контакты</h1>
+            <div class="row pt-4 pb-1">
+                <div class="col-12 d-flex flex-column flex-md-row justify-content-between">
+                    <h1 class="section-header">Контакты</h1>
+                        <div class="">
+                            <label class="contacts__label d-block" class="d-block">
+                                <span class="contacts__label__text">EMAIL: </span>
+                                <a href="mailto:hello@profigram.com">hello@profigram.com</a>
+                            </label>
+                            <label class="contacts__label d-block" class="d-block">
+                                <span class="contacts__label__text">Phone: </span>
+                                <a href="callto:380670123456">38(067)-012-34-56</a>
+                            </label>
+                        </div>
+                        <div>
+                            <a href="instagram://user?username=[1]" class="social-icon mr-1">
+                                <img src="img/social-icons/instagram.svg" alt="Instagram logo">
+                            </a>
+                            <a href="tg://resolve?domain=имя" class="social-icon mr-1">
+                                <img src="img/social-icons/telegram.svg" alt="Telegram logo">
+                            </a>
+                            <a href="viber://add?number=%2B380670123456" class="social-icon">
+                                <img src="img/social-icons/viber.svg" alt="Viber logo">
+                            </a>
+                        </div>
                 </div>
-                <div class="col-12">
-                    <label class="contacts__label d-block" class="d-block">
-                        <span class="contacts__label__text">EMAIL: </span>
-                        <a href="mailto:hello@profigram.com">hello@profigram.com</a>
-                    </label>
-                    <label class="contacts__label d-block" class="d-block">
-                        <span class="contacts__label__text">Phone: </span>
-                        <a href="callto:380670123456">38(067)-012-34-56</a>
-                    </label>
-                </div>
-                <div class="divider col-12 d-none d-md-block pb-5 pt-4"></div>
+
+                <div class="divider col-12 d-block pb-md-3 pt-3"></div>
+
                 <div class="col-12 d-flex flex-row align-items-center flex-column flex-md-row">
-                    <img src="img/logo.png" width="100" height="30" alt="Logo" class="d-block">
+                    <img src="img/logo.png" alt="Logo" class="d-block logo">
                     <small class="d-block w-100 text-center">All rights reserved. 2018</small>
                 </div>
             </div>
@@ -910,27 +997,58 @@
 
         $(".navbar a").click(function () {
             $('html, body').animate({
-                scrollTop: $($(this).data('scrollto')).offset().top - 70
+                scrollTop: $($(this).data('scrollto')).offset().top
             }, 500);
         });
 
         (function () {
-                'use strict';
-                window.addEventListener('load', function () {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function (form) {
-                        form.addEventListener('submit', function (event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        $(document).on("click", function (event) {
+            var $trigger = $(".navbar-collapse.collapse.show");
+            var $menuItem = $(".navbar-collapse.collapse.show a.nav-link");
+            if (($trigger !== event.target && !$trigger.has(event.target).length) || ($menuItem !== event.target && !$menuItem.has(event.target).length)) {
+                $('.navbar-collapse.collapse.show').removeClass('show')
+            }
+        });
+
+
+        var sections = $('section')
+            , nav = $('nav')
+            , nav_height = nav.outerHeight();
+
+        $(window).on('scroll', function () {
+            var cur_pos = $(this).scrollTop();
+
+            sections.each(function () {
+                var top = $(this).offset().top - nav_height,
+                    bottom = top + $(this).outerHeight();
+
+                if (cur_pos >= top && cur_pos <= bottom) {
+                    nav.find('a.navbar__active-item').removeClass('navbar__active-item');
+                    //sections.removeClass('here');
+
+                    // $(this).addClass('here');
+                    nav.find('a[data-scrollto="#' + $(this).attr('id') + '"]').addClass('navbar__active-item');
+                    // console.log('a[data-scrollto="#' + $(this).attr('id') + '"]')
+                }
+            });
+        });        
     </script>
 </body>
 

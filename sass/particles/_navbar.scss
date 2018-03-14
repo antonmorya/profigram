@@ -21,6 +21,15 @@
     button.btn {
         font-size: 15px;
     }
+    a:hover {
+        text-decoration: none;
+    }
+    .navbar-nav .nav-link.navbar__active-item {
+        color: $txt-color-primary-red
+    }
+    .logo {
+        height: 2.5rem;
+    }    
 }
 
 .navbar-light .navbar-nav .nav-link {
