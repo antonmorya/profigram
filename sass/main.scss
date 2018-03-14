@@ -73,7 +73,8 @@ button.btn {
     &.custom-colored {
         background-image: linear-gradient( 90deg, rgb(230, 13, 68) 0%, rgb(190, 55, 93) 100%);
         color: white;
-        box-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
+        /* box-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3); */
+        box-shadow: .5px 1px 1px rgba(0, 0, 0, 0.3);
         &:not(:disabled):not(.disabled):active {
             color: #fff;
             background-color: #bd2130;
