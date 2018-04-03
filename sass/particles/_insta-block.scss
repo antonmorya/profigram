@@ -1,5 +1,8 @@
     #examples-carousel {
         position: relative;
+        .carousel-item__acc-description {
+            min-height: 150px;
+        }
         .carousel-item__image-description h3 {
             font-weight: 300;
             margin: .2rem;
@@ -8,6 +11,17 @@
             @include media('<tablet') {
                 font-size: 1rem;
                 color: white;
+            }
+        }
+        .carousel-item__image-wrapper img {
+            @include media('<'+$grid-breakpoint-md) {
+                max-height: 325px;
+            }
+            @include media('>'+$grid-breakpoint-md, '<='+$grid-breakpoint-lg) {
+                max-height: 370px;
+            }
+            @include media('>'+$grid-breakpoint-lg) {
+                max-height: 500px;
             }
         }
         .carousel-item__image-description {
