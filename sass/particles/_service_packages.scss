@@ -49,6 +49,7 @@
         font-size: .8rem;
         letter-spacing: normal;
         background-color: #e60d44;
+        vertical-align: middle;
         @include media('<tablet') {
             display: block;
             margin-top: .3rem;

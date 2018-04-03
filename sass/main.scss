@@ -48,17 +48,16 @@ body {
 }
 
 .custom-rounded {
-    border-radius: 22px!important;
+    border-radius: 22px !important;
     &-left {
-        border-top-left-radius: 22px!important;
-        border-bottom-left-radius: 22px!important;
+        border-top-left-radius: 22px !important;
+        border-bottom-left-radius: 22px !important;
     }
     &-right {
-        border-top-right-radius: 22px!important;
-        border-bottom-right-radius: 22px!important;
+        border-top-right-radius: 22px !important;
+        border-bottom-right-radius: 22px !important;
     }
 }
-
 
 /* .btn-danger:not(:disabled):not(.disabled):active, .show>.btn-danger.dropdown-toggle {
     color: #fff;
@@ -173,7 +172,6 @@ a:focus {
     outline: none;
 }
 
-
 /*carousel*/
 
 .carousel- {
@@ -210,8 +208,8 @@ a:focus {
 }
 
 .px-4_5 {
-    padding-left: 2.5rem!important;
-    padding-right: 2.5rem!important;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
 }
 
 .section-header {
@@ -328,7 +326,6 @@ input,
     }
 }
 
-
 /* .btn-danger:not(:disabled):not(.disabled).active:focus, 
 .btn-danger:not(:disabled):not(.disabled):active:focus, 
 .show>.btn-danger.dropdown-toggle:focus */
@@ -357,7 +354,7 @@ input,
 }
 
 .custom-control-input:checked~.custom-control-label::before,
-{
+    {
     background-color: $txt-color-primary-red !important
 }
 
@@ -372,4 +369,12 @@ input,
 
 a:hover {
     text-decoration: none;
+}
+
+.floating-buttons {
+    position: fixed;
+    right: 0;
+    top: 75px;
+    z-index: 10;
+    padding-right: 15px;
 }
