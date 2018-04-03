@@ -8,4 +8,9 @@
     .clients__item-avatar {
         border-radius: 50%;
     }
+    .carousel-item .row {
+        @include media('<tablet') {
+            min-height: 540px;
+        }
+    }
 }

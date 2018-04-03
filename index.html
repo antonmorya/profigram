@@ -70,8 +70,6 @@
                                                 <input type="checkbox" class="custom-control-input" id="modal_rassylka">
                                                 <label class="custom-control-label small" for="modal_rassylka">Рассылка сообщений</label>
                                             </div>
-                                        </div>
-                                        <div class="col-6">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="modal_consult">
                                                 <label class="custom-control-label small" for="modal_consult">Консультации и рекомендации</label>
@@ -80,6 +78,8 @@
                                                 <input type="checkbox" class="custom-control-input" id="modal_oforml-media-kontenta">
                                                 <label class="custom-control-label small" for="modal_oforml-media-kontenta">Оформление медиа-контента</label>
                                             </div>
+                                        </div>
+                                        <div class="col-6">
                                             <label class="label mt-2 font-weight-bold">Пакеты услуг</label>
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="modal_packet-bronze">
@@ -542,7 +542,7 @@
             <div class="col-md-4 px-md-1 px-lg-4 mb-5 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--silver">
                     Silver
-                    <span class="badge badge-pill">Экономия 700грн</span>
+                    <span class="badge badge-pill">Экономия 900грн</span>
                 </button>
                 <ul class="mt-4 px-3 list--silver">
                     <li>Поиск актуальной аудитории для Вашего аккаунта</li>
@@ -562,7 +562,7 @@
             <div class="col-md-4 px-md-1 px-lg-4 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--gold">
                     Gold
-                    <span class="badge badge-pill">Экономия 800грн</span>
+                    <span class="badge badge-pill">Экономия 1000грн</span>
                 </button>
                 <ul class="mt-4 px-3 list--gold">
                     <li>Поиск актуальной аудитории для Вашего аккаунта</li>
@@ -749,11 +749,11 @@
                 <h1 class="section-header mt-0 mb-5">Отзывы</h1>
             </div>
             <div class="col-12">
-                <div id="clients-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+                <div id="clients-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="container p-md-0">
-                                <div class="row">
+                                <div class="row d-flex flex-column justify-content-between flex-md-row">
                                     <div class="col-md-6 text-center clients__item">
                                         <img src="img/feedbacks/chernivtsi24.jpg" alt="" class="clients__item-avatar">
                                         <h3 class="clients__item-name mt-4 mb-4">Команда chernivtsi24</h3>
@@ -777,7 +777,7 @@
 
                         <div class="carousel-item">
                             <div class="container p-md-0">
-                                <div class="row">
+                                <div class="row d-flex flex-column justify-content-between flex-md-row">
                                     <div class="col-md-6 text-center clients__item">
                                         <img src="img/feedbacks/maxim.jpg" alt="" class="clients__item-avatar">
                                         <h3 class="clients__item-name mt-4 mb-4">Максим</h3>
@@ -828,8 +828,8 @@
                 <h1 class="section-header mt-0 mb-5">Напишите нам чтобы узнать больше</h1>
             </div>
             <div class="col-12"></div>
-            <div class="col-2 col-md-4 col-lg-6 bg-letter-us"></div>
-            <div class="col-10 col-md-8 col-lg-6">
+            <div class="col-2 col-md-4 col-lg-6 d-none d-sm-block bg-letter-us"></div>
+            <div class="col-sm-10 col-md-8 col-lg-6">
                 <form class="needs-validation" novalidate method="post" action="send_form_email.php">
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
@@ -867,8 +867,6 @@
                                     <input type="checkbox" class="custom-control-input" id="rassylka">
                                     <label class="custom-control-label small" for="rassylka">Рассылка сообщений</label>
                                 </div>
-                            </div>
-                            <div class="col-6">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="consult">
                                     <label class="custom-control-label small" for="consult">Консультации и рекомендации</label>
@@ -877,6 +875,8 @@
                                     <input type="checkbox" class="custom-control-input" id="oforml-media-kontenta">
                                     <label class="custom-control-label small" for="oforml-media-kontenta">Оформление медиа-контента</label>
                                 </div>
+                            </div>
+                            <div class="col-6">
                                 <label class="label mt-2 font-weight-bold">Пакеты услуг</label>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="packet-bronze">
