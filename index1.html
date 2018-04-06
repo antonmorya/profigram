@@ -5,11 +5,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116838020-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-116838020-1');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-116838020-1');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,93 @@
 </head>
 
 <body class="" id="top">
+
+    <!-- Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Форма заказа</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body letter-us">
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="needs-validation" novalidate method="post" action="send_form_email.php">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="modal_name" placeholder="ваше имя" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" id="modal_phone" placeholder="Ваш телефон" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="url" class="form-control" id="modal_socialnetworks" placeholder="Ваша страница в соц. сети">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="modal_promocode" placeholder="Промокод">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label class="label font-weight-bold">Услуги</label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_prodvizh-stranits">
+                                                <label class="custom-control-label small" for="modal_prodvizh-stranits">Продвижение страниц</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_podbor-kontenta">
+                                                <label class="custom-control-label small" for="modal_podbor-kontenta">Подборка контента</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_page-admin">
+                                                <label class="custom-control-label small" for="modal_page-admin">Администрирование страниц</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_massfollowing">
+                                                <label class="custom-control-label small" for="modal_massfollowing">Массфоловинг</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_rassylka">
+                                                <label class="custom-control-label small" for="modal_rassylka">Рассылка сообщений</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_consult">
+                                                <label class="custom-control-label small" for="modal_consult">Консультации и рекомендации</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_oforml-media-kontenta">
+                                                <label class="custom-control-label small" for="modal_oforml-media-kontenta">Оформление медиа-контента</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="label mt-2 font-weight-bold">Пакеты услуг</label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_packet-bronze">
+                                                <label class="custom-control-label small" for="modal_packet-bronze">Пакет Bronze</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_packet-silver">
+                                                <label class="custom-control-label small" for="modal_packet-silver">Пакет Silver</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="modal_packet-gold">
+                                                <label class="custom-control-label small" for="modal_packet-gold">Пакет Gold</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right mt-4">
+                                    <button class="btn btn-danger btn-sm custom-rounded custom-colored px-4_5" type="submit">Заказать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="floating-buttons d-flex flex-column d-lg-none">
         <a href="https://www.instagram.com/profigram.com.ua/" class="social-icon mb-2">
@@ -106,7 +193,7 @@
                                 <img src="img/social-icons/viber.svg" alt="Viber logo">
                             </a>
                         </div>
-                        <a class="btn custom-colored btn-danger custom-rounded btn-sm px-4_5 d-block" data-scrollto="#letter-us">Заказать</a>
+                        <button class="btn custom-colored btn-danger custom-rounded btn-sm px-4_5 d-block" data-toggle="modal" data-target="#orderModal">Заказать</button>
                     </li>
                 </ul>
             </div>
@@ -123,7 +210,8 @@
                 </a>
             </span>
 
-            <a class="btn custom-colored btn-danger btn-sm custom-rounded float-right order-6 d-none d-md-block px-4_5" data-scrollto="#letter-us">Заказать</a>
+            <button class="btn custom-colored btn-danger btn-sm custom-rounded float-right order-6 d-none d-md-block px-4_5" data-toggle="modal"
+                data-target="#orderModal">Заказать</button>
         </div>
     </nav>
 
@@ -237,7 +325,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">от 699 грн</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -256,7 +344,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">от 1699 грн</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -276,7 +364,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">от 799 грн</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -296,7 +384,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">от 599 грн</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -316,7 +404,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">от 299 грн</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -335,7 +423,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">бесплатно</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -356,7 +444,7 @@
                         <span class="price-label__defis">&mdash;</span>
                         <span class="price-label__price">от 1499 грн</span>
                     </label>
-                    <a class="btn custom-rounded custom-colored px-4_5 btn-sm btn-danger" data-scrollto="#letter-us">Заказать</a>
+                    <button class="btn custom-rounded custom-colored px-4_5 btn-sm" data-toggle="modal" data-target="#orderModal">Заказать</button>
                 </div>
             </div>
         </div>
@@ -458,7 +546,7 @@
                     <span class="price-label__defis">&mdash;</span>
                     <span class="price-label__price">от 1999 грн</span>
                 </label>
-                <a class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-scrollto="#letter-us">Заказать</a>
+                <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
             </div>
             <div class="col-md-4 px-md-1 px-lg-4 mb-5 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--silver">
@@ -478,7 +566,7 @@
                     <span class="price-label__defis">&mdash;</span>
                     <span class="price-label__price">от 3299 грн</span>
                 </label>
-                <a class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-scrollto="#letter-us">Заказать</a>
+                <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
             </div>
             <div class="col-md-4 px-md-1 px-lg-4 mb-md-0 service-packages__item">
                 <button class="btn service-packages__item-button btn btn-block custom-colored--gold">
@@ -499,7 +587,7 @@
                     <span class="price-label__defis">&mdash;</span>
                     <span class="price-label__price">от 3999 грн</span>
                 </label>
-                <a class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-scrollto="#letter-us">Заказать</a>
+                <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5 d-block mx-auto" data-toggle="modal" data-target="#orderModal">Заказать</button>
             </div>
         </div>
     </section>
@@ -523,7 +611,7 @@
                         бизнес через социальные сети, присоединяйтесь!</p>
                 </main>
                 <footer>
-                    <a class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5" data-scrollto="#letter-us">Консультация</a>
+                    <button class="btn custom-colored btn-danger btn-sm custom-rounded px-4_5" data-toggle="modal" data-target="#orderModal">Консультация</button>
                 </footer>
             </div>
         </div>
@@ -753,13 +841,13 @@
             <div class="col-sm-10 col-md-8 col-lg-6">
                 <form class="needs-validation" novalidate method="post" action="send_form.php">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="name" placeholder="ваше имя" required>
+                        <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
                     </div>
                     <div class="form-group">
                         <input type="tel" class="form-control" id="phone" placeholder="Ваш телефон" required>
                     </div>
                     <div class="form-group">
-                        <input type="url" class="form-control" id="socialnetworks" placeholder="Ваша страница в соц. сети">
+                        <input type="text" class="form-control" id="socialnetworks" placeholder="Ваша страница в соц. сети">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="promocode" placeholder="Промокод">
@@ -877,7 +965,7 @@
             }
         });
 
-        $("a[data-scrollto]").click(function () {
+        $(".navbar a").click(function () {
             $('html, body').animate({
                 scrollTop: $($(this).data('scrollto')).offset().top
             }, 500);
@@ -923,7 +1011,11 @@
 
                 if (cur_pos >= top && cur_pos <= bottom) {
                     nav.find('a.navbar__active-item').removeClass('navbar__active-item');
+                    //sections.removeClass('here');
+
+                    // $(this).addClass('here');
                     nav.find('a[data-scrollto="#' + $(this).attr('id') + '"]').addClass('navbar__active-item');
+                    // console.log('a[data-scrollto="#' + $(this).attr('id') + '"]')
                 }
             });
         });        

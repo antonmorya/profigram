@@ -15,13 +15,13 @@
         }
         .carousel-item__image-wrapper img {
             @include media('<'+$grid-breakpoint-md) {
-                max-height: 325px;
+                height: 325px;
             }
             @include media('>'+$grid-breakpoint-md, '<='+$grid-breakpoint-lg) {
-                max-height: 370px;
+                height: 370px;
             }
             @include media('>'+$grid-breakpoint-lg) {
-                max-height: 500px;
+                height: 500px;
             }
         }
         .carousel-item__image-description {

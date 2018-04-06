@@ -1,4 +1,7 @@
 .clients {
+    &__item {
+        min-height: 300px;
+    }
     .clients__item-avatar {
         max-height: 6.5rem;
     }
